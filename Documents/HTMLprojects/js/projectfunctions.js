@@ -1,4 +1,4 @@
-﻿
+
 var task_array = [];
 
 var id = 0;
@@ -33,6 +33,11 @@ function myTimingfadeing(elementId) {
     return;
 }
 
+function myTimingfadeings(y) {
+
+    y.className = "div";
+    return;
+}
 
 
 
@@ -48,8 +53,10 @@ function deleteTasking(elementId) {
     flagrefersetable = true;
 
     document.getElementById("task_table").innerHTML = "";
+    var stopfade;
+
     document.getElementById("save_task").click();
-   
+
 
 }
 
@@ -113,18 +120,28 @@ window.onload = function () {
         y.innerHTML += '<div id="' + id + '"  class="bottom-right">' + task.date + '</div>';
 
 
-   
+
 
         ///y.appendChild(t);
 
-
+        //if (flagrefersetable == true) {
+        //    div.s.style.animation = "";
+        //    ball.style.webkitAnimation = "";
+        //}
         document.getElementById("myTr").appendChild(y);
-        if (flagaddtask == true) {
-           // document.getElementById(id).style.opacity = "0";
-            //FadeinTiming(id);
+        //requestAnimationFrame(function () {
+        //    y.className = "fadein";
+        //});
+
+        if (flagrefersetable == false) {
+            requestAnimationFrame(function () {
+                y.className = "fade";
+                setTimeout(myTimingfadeings, 1000, y);
+
+ 
+            });
             flagaddtask = false;
         }
-
         id++;
         id2 = id * 1000;
 
@@ -140,6 +157,7 @@ window.onload = function () {
         }
 
         if (flagrefersetable == true) {
+
             if (typeof localStorage.task == 'undefined') {
                 localStorage.task = JSON.stringify([]);
             } else {
@@ -149,6 +167,8 @@ window.onload = function () {
                     task_array.push(task[i]);
                     addRowToTable(task[i]);
                 }
+
+    
             }
 
             flagrefersetable = false;
@@ -159,10 +179,19 @@ window.onload = function () {
        // document.getElementById("myText").required;
 
         var task = document.querySelector("#myText").value;
+
+ 
+    
         if (document.querySelector("#myDateText").value.length == 10) {
+         
 
 
-            var date = new Date(document.querySelector("#myDateText").value);
+            var originaldatestring = document.querySelector("#myDateText").value;
+            var datestring = document.querySelector("#myDateText").value[3] + document.querySelector("#myDateText").value[4] + document.querySelector("#myDateText").value[2] + document.querySelector("#myDateText").value[0] + document.querySelector("#myDateText").value[1] + document.querySelector("#myDateText").value[5] + document.querySelector("#myDateText").value[6] + document.querySelector("#myDateText").value[7] + document.querySelector("#myDateText").value[8] + document.querySelector("#myDateText").value[9];
+
+             
+
+            date= new Date(datestring);
             date = date.toLocaleDateString();
         }
         else {
@@ -182,6 +211,7 @@ window.onload = function () {
             ishourValid == true && hour.length == 8) {
             // Ok
             //document.querySelector("#error_alert").style = "display:none;";
+            date = originaldatestring;
 
             addTask({
                 Id,
