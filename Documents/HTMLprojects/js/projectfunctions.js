@@ -113,7 +113,7 @@ window.onload = function () {
 
         y.innerHTML += '<div id="' + id + '" class="top-right"><p class="glyphicon glyphicon-remove-circle" id="' + id2 + '"onclick="deleteTask('+ id +')"></p></div>';
 
-        y.innerHTML += '<div  align="center" id="' + id + '" > <textarea class="centered"  id="' + id2 + '"  rows="8"  cols="20" readonly>' + task.task + '</textarea></div>';
+        y.innerHTML += '<div  align="center" id="' + id + '" > <textarea class="centered"  id="' + id2 + '"  rows="9"  cols="24" readonly>' + task.task + '</textarea></div>';
 
         y.innerHTML += '<div id="' + id + '"  class="bottom-left">' + task.hour + '</div>';
 
