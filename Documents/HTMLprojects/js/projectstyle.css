@@ -22,9 +22,6 @@ div {
     transition: 0.5s;
 }
 
-.fadein {
-    opacity: 1;
-}
 
 @keyframes fadein {
     from {
