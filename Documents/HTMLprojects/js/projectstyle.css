@@ -5,11 +5,13 @@
 }
 
 
+#save_task {
+    position: absolute;
+    left: 850px;
+    top: 380px;
+}
 div {
     opacity: 1;
-    /*-webkit-animation: fadein 3s*/; /* Safari, Chrome and Opera > 12.1 */
-    /*-moz-animation: fadein 2s; /* Firefox < 16 */
-    /*-o-animation: fadein 2s; /* Opera < 12.1 */
     transition: 0.3s;
 }
 
@@ -19,7 +21,7 @@ div {
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
-    transition: 0.5s;
+    transition: 2.0s;
 }
 
 
@@ -36,6 +38,7 @@ div {
 
 @-moz-keyframes fadein { /* Firefox */
     from {
+ 
         opacity: 0;
     }
 
@@ -254,11 +257,6 @@ labelhour {
 }
 
 
-#save_task {
-    position: absolute;
-    right: 1200px;
-    top: 380px;
-}
 
 label2 {
     position: absolute;
@@ -281,9 +279,9 @@ label4 {
 
 label5 {
     position: absolute;
-    left: 495px;
+    left: 520px;
     top: 410px;
-    width: 175px;
+    width: 152px;
     height: 20px;
     background-color: red;
     opacity: 0;
