@@ -100,14 +100,14 @@ table, td {
 
 .bottom-left {
     position: relative;
-    bottom: 20px;
+    bottom: 25px;
     left: 16px;
 }
 
 .bottom-right {
     position: relative;
-    top: 70%;
-    right: 16px;
+    top: 200px;
+    left: 16px;
 }
 
 
