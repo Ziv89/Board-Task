@@ -212,7 +212,9 @@ window.onload = function () {
             // Ok
             //document.querySelector("#error_alert").style = "display:none;";
             date = originaldatestring;
-            document.querySelector("#myText").value ="";
+            document.querySelector("#myText").value = "";
+            document.querySelector("#myHourText").value = "";
+            document.querySelector("#myDateText").value = "";
             addTask({
                 Id,
                 task,
