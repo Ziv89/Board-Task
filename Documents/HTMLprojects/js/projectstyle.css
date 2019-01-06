@@ -4,6 +4,10 @@
     border: 1px solid #000;
 }
 
+body {
+    position: absolute;
+    left: 350px;
+}
 
 #save_task {
     position: absolute;
