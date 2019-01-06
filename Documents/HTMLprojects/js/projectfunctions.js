@@ -200,15 +200,23 @@ window.onload = function () {
         var hour = (document.querySelector("#myHourText").value);
 
 
-        if (task == "" || document.querySelector("#myDateText").value == "" || hour == "") {
+
+        if (task == "" || document.querySelector("#myDateText").value == "") {
             return;
+        }
+
+        var ishourValid = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/.test(hour);
+
+        if (hour != "") {
+            
+            if (ishourValid == false && hour.length > 8 || ishourValid == false && hour.length < 8) {
+                hour = "";
+            }
         }
 
 
 
-        var ishourValid = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/.test(hour);
-        if (date.toString().includes("Invalid Date") == false &&
-            ishourValid == true && hour.length == 8) {
+        if (date.toString().includes("Invalid Date") == false) {
             // Ok
             //document.querySelector("#error_alert").style = "display:none;";
             date = originaldatestring;
