@@ -149,6 +149,10 @@ window.onload = function () {
 
     document.querySelector("#save_task").addEventListener("click", function () {
         document.getElementById("error").style.opacity = "0";
+        document.getElementById('error').innerHTML = "Error! Enter legit Date";
+        document.getElementById('error').style.color = "yellow";
+
+
         flagaddtask = true;
 
 
@@ -210,10 +214,12 @@ window.onload = function () {
         if (hour != "") {
             
             if (ishourValid == false && hour.length > 8 || ishourValid == false && hour.length < 8) {
-                hour = "";
+                document.getElementById('error').innerHTML = "Error! Enter legit Date and Hour";
+                document.getElementById('error').style.color = "yellow";
+                document.getElementById("error").style.opacity = "1";
+                return;
             }
         }
-
 
 
         if (date.toString().includes("Invalid Date") == false) {
